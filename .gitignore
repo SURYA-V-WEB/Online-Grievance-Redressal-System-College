@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# FastAPI runtime data
+backend/data/ogr.db
+backend/data/uploads/
+
+# Env files
+.env
+.env.*
+
+# OS/Editor files
+.DS_Store
+Thumbs.db
+*.log

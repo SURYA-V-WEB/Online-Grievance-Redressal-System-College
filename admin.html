@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | Online Grievance Redressal</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">🛡️</div>
+        <div>
+          <h1 class="title">Admin Dashboard</h1>
+          <p class="subtitle">Online Grievance Redressal</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="student.html">Student Portal</a>
+        <a href="admin.html" class="active">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="loginSection" class="card">
+      <h2>Admin Login</h2>
+      <p class="muted">Demo login only. Use any username and password <code>admin123</code>.</p>
+      <form id="adminLoginForm" class="form-inline">
+        <input type="text" id="adminUser" placeholder="Username" required />
+        <input type="password" id="adminPass" placeholder="Password" required />
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <div id="loginError" class="alert danger hidden"></div>
+    </section>
+
+    <section id="dashboardSection" class="hidden">
+      <div class="toolbar">
+        <div class="filters">
+          <select id="filterStatus">
+            <option value="">All Statuses</option>
+            <option>Submitted</option>
+            <option>In Review</option>
+            <option>Resolved</option>
+            <option>Rejected</option>
+          </select>
+          <select id="filterDepartment"></select>
+          <select id="filterCategory"></select>
+          <input type="search" id="searchText" placeholder="Search subject/description" />
+        </div>
+        <div class="toolbar-right">
+          <button id="exportJSON" class="btn btn-secondary">Export JSON</button>
+          <button id="logoutBtn" class="btn btn-quiet">Logout</button>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div class="table-responsive">
+          <table id="grievanceTable">
+            <thead>
+              <tr>
+                <th>Ticket</th>
+                <th>Student</th>
+                <th>Dept</th>
+                <th>Category</th>
+                <th>Subject</th>
+                <th>Status</th>
+                
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="editDrawer" class="drawer hidden">
+        <div class="drawer-header">
+          <h3>Edit Grievance</h3>
+          <button id="closeDrawer" class="icon-btn" title="Close">✖</button>
+        </div>
+        <div class="drawer-body">
+          <form id="editForm" class="form-grid">
+            <div class="form-group">
+              <label for="editStatus">Status</label>
+              <select id="editStatus">
+                <option>Submitted</option>
+                <option>In Review</option>
+                <option>Resolved</option>
+                <option>Rejected</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="editDepartment">Department</label>
+              <select id="editDepartment"></select>
+            </div>
+            <div class="form-group">
+              <label for="editCategory">Category</label>
+              <select id="editCategory"></select>
+            </div>
+            <div class="form-group full">
+              <label for="editNotes">Admin Notes</label>
+              <textarea id="editNotes" rows="5" placeholder="Enter remarks, actions taken, and resolution details"></textarea>
+            </div>
+          </form>
+
+          <div class="card" style="margin-top:12px">
+            <h4 style="margin:0 0 8px">Attachments</h4>
+            <p class="muted">Upload related documents for this grievance.</p>
+            <div class="form-inline">
+              <input type="file" id="editAttachFile" />
+              <button id="editAttachUpload" class="btn btn-secondary" type="button">Upload</button>
+            </div>
+            <ul id="editAttachList" style="list-style:none; padding-left:0; margin:10px 0 0"></ul>
+          </div>
+        </div>
+        <div class="drawer-footer">
+          <button id="saveEdit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span>KIT-KALAIGNARKARUNANIDHI INSTITUDE OF TECHNOLOGY</span>
+      <span>Admin Panel</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/admin.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

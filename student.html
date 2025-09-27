@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal | Online Grievance Redressal</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">🎓</div>
+        <div>
+          <h1 class="title">Student Portal</h1>
+          <p class="subtitle">Online Grievance Redressal</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="#submit" class="active">Submit</a>
+        <a href="#track">Track</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="tabs">
+      <button class="tab-btn active" data-tab="submit">Submit Grievance</button>
+      <button class="tab-btn" data-tab="track">Track Grievance</button>
+    </section>
+
+    <section id="tab-submit" class="tab active">
+      <div class="card">
+        <h2>Submit Grievance</h2>
+        <p class="muted">Provide accurate details to help us resolve your concern quickly.</p>
+        <form id="grievanceForm" class="form-grid">
+          <div class="form-group">
+            <label for="studentName">Full Name</label>
+            <input type="text" id="studentName" required placeholder="e.g., Priya Sharma" />
+          </div>
+          <div class="form-group">
+            <label for="studentEmail">Email</label>
+            <input type="email" id="studentEmail" required placeholder="e.g., priya@college.edu" />
+          </div>
+          <div class="form-group">
+            <label for="department">Department</label>
+            <select id="department" required></select>
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" required></select>
+          </div>
+          <div class="form-group full">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" required placeholder="Short summary" />
+          </div>
+          <div class="form-group full">
+            <label for="description">Description</label>
+            <textarea id="description" rows="6" required placeholder="Describe your grievance in detail"></textarea>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-quiet">Clear</button>
+          </div>
+        </form>
+        <div id="submitResult" class="alert success hidden"></div>
+      </div>
+    </section>
+
+    <section id="tab-track" class="tab">
+      <div class="card">
+        <h2>Track Grievance</h2>
+        <p class="muted">Enter your Ticket ID to view the latest status and remarks.</p>
+        <form id="trackForm" class="form-inline">
+          <input type="text" id="ticketId" placeholder="Ticket ID (e.g., GRV-20250927-0001)" required />
+          <button type="submit" class="btn btn-secondary">Track</button>
+        </form>
+        <div id="trackResult" class="track-result hidden"></div>
+        <div id="trackAttachments" class="card hidden">
+          <h3 style="margin-top:0">Attachments</h3>
+          <p class="muted">Upload supporting documents (PDF, images, etc.). Max few MB per file (browser dependent).</p>
+          <div class="form-inline">
+            <input type="file" id="attachFile" />
+            <button id="attachUpload" class="btn btn-primary" type="button">Upload</button>
+          </div>
+          <div style="margin-top:10px">
+            <strong>Files</strong>
+            <ul id="attachList" style="list-style:none; padding-left:0; margin:8px 0 0"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Your College Name</span>
+      <span>Student Portal</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/student.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

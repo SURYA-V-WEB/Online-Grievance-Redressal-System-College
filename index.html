@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Grievance Redressal | College</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">🎓</div>
+        <div>
+          <h1 class="title">Online Grievance Redressal</h1>
+          <p class="subtitle">College Portal</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="student.html">Student Portal</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Submit, Track, and Resolve Grievances Efficiently</h2>
+        <p class="lead">A transparent and streamlined system to ensure your concerns are heard and resolved on time.</p>
+        <div class="cta-group">
+          <a href="student.html#submit" class="btn btn-primary">Submit Grievance</a>
+          <a href="student.html#track" class="btn btn-secondary">Track Grievance</a>
+          <a href="admin.html" class="btn btn-quiet">Go to Admin</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container grid-3">
+        <div class="card">
+          <h3>Simple Submission</h3>
+          <p>Fill out a concise form with your details and concern. Receive a unique Ticket ID instantly.</p>
+        </div>
+        <div class="card">
+          <h3>Real-time Tracking</h3>
+          <p>Use your Ticket ID to track status updates, remarks, and resolution timelines.</p>
+        </div>
+        <div class="card">
+          <h3>Admin Dashboard</h3>
+          <p>Admins can categorize, assign, update status, and leave notes for transparent communication.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> KIT-KALAIGNARKARUNANIDHI INSTITUDE OF TECHNOLOGY</span>
+      <span>Made for demo • Data stored in your browser</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
